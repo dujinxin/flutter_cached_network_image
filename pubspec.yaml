@@ -1,4 +1,4 @@
-name: cached_network_image_decode
+name: cached_network_image
 description: A new Flutter package project.
 version: 0.0.1
 homepage: https://github.com/dujinxin/flutter_cached_network_image
