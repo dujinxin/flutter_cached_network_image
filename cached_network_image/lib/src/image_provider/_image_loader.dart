@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:cached_network_image_platform_interface/cached_network_image_platform_interface.dart';
@@ -57,11 +56,7 @@ class ImageLoader implements platform.ImageLoader {
         if (result is FileInfo) {
           var file = result.file;
           var bytes = await file.readAsBytes();
-
-          var newBytes = Uint8List.fromList(bytes);
-          var subBytes = newBytes.sublist(1);
-          var decoded = await decode(subBytes);
-          //var decoded = await decode(bytes);
+          var decoded = await decode(bytes.sublist(1)); 
           yield decoded;
         }
       }
